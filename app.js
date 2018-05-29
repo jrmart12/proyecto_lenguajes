@@ -4,15 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
-var book = require('./routes/book');
+var product = require('./routes/product');
 var app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/books', express.static(path.join(__dirname, 'dist')));
-app.use('/book', book);
+app.use('/products', express.static(path.join(__dirname, 'dist')));
+app.use('/product', product);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -20,6 +20,12 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+mongoose.connect('mongodb://localhost/proyecto', { useMongoClient: true, promiseLibrary: require('bluebird') })
+  .then(() =>  console.log('connection succesful'))
+  .catch((err) => console.error(err));
 
 // error handler
 app.use(function(err, req, res, next) {
