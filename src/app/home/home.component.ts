@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'home-page',
   templateUrl: './home.component.html',

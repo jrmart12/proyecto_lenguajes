@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Shop Cart</title>
+
+
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+ 
+    <script type="text/javascript" src="https://cdn.auth0.com/js/lock/11.6.1/lock.min.js"></script>
+    <script src="node_modules/angular-lock/dist/angular-lock.js"></script>
+    <script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
+
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        #divTotal{
+            background-color: green;
+        }
+        .affix{
+            right: 0px;
+        }
+        .affix-top{
+            right: 0px;
+            position: fixed;
+        }
+    </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optradio">Option 1</label>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-xs-5 col-md-4 col-sm-4 col-lg-4">
+        <div class="panel panel-primary">
+            <div id="divTotal" class="panel-heading">
+                <h3 class="panel-title">Total</h3>
+            </div>
+            <div class="panel-body">
+                <h2>Rs. 100</h2>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="#/cart" class="btn btn-danger">Checkout <span
+              class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+            </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
