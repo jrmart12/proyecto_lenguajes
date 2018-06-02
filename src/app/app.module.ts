@@ -7,7 +7,14 @@ import {CartModule} from './cart/cart.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductComponent } from './product/product.component';
+import { appRoutes } from '../../routerConfig';
+import { ProductService } from '../../product.service';
+import { IndexComponent } from './index/index.component';
+import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthComponent } from './auth/auth.component';
+
 import {
   FooterComponent,
   HeaderComponent,
@@ -17,23 +24,16 @@ import {
 } from './shared';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
-const appRoutes: Routes = [
-  {
-    path: 'products',
-    component: ProductComponent,
-    data: { title: 'product List' }
-  },
-  { path: '',
-    redirectTo: '/products',
-    pathMatch: 'full'
-  }
-];
+
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    ProductComponent
+    IndexComponent,
+    CreateComponent,
+    EditComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -44,16 +44,13 @@ const appRoutes: Routes = [
     SharedModule,
   FormsModule,
   HttpClientModule,
-  RouterModule.forRoot(
-    appRoutes,
-    { enableTracing: true } // <-- debugging purposes only
-  )
+  RouterModule.forRoot(appRoutes), HttpClientModule, ReactiveFormsModule
     
   ],
     providers: [
-        ApiService,
-        UserService
+        ProductService,UserService,ApiService
       ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
